@@ -29,8 +29,14 @@ body {
 }
 
 .content {
-    padding: 10px;
+    padding: 20px;
     color: #09679c;
+}
+
+.button-container{
+    width: 640px;
+    max-width: 100%;
+    margin: 20px auto;
 }
 
 .clearfix {
@@ -67,6 +73,10 @@ body {
     color: white;
     margin: 10px 0;
     border: none;
+}
+
+#generated {
+    padding: auto;
 }
 
 button:hover {
