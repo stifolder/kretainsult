@@ -10,6 +10,7 @@ jobs:
     container: pandoc/latex 
                                
     steps:
+      - uses: actions/checkout@v2
       - name: Pushes to kretainsult github pages
         uses: cpina/github-action-push-to-another-repository@main
         env:
