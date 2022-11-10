@@ -23,6 +23,7 @@
   <Word type="m">Aszott</Word>
   <Word type="m">Átbaszott</Word>
   <Word type="f">Azt a kurva de fasz</Word>
+  <Word type="m">Balatonberényben napvilágot látott</Word>
   <Word type="f">Balfasz</Word>
   <Word type="f">Balfészek</Word>
   <Word type="f">Baromfifasz</Word>
@@ -35,7 +36,9 @@
   <Word type="m">Bélböfi</Word>
   <Word type="m">Beleiből kiforgatott</Word>
   <Word type="f">Bélszél</Word>
+  <Word type="m">Bronz térdű</Word>
   <Word type="f">Brunya</Word>
+  <Word type="m">Büdös szájú</Word>
   <Word type="m">Büdösszájú</Word>
   <Word type="m">Búvalbaszott</Word>
   <Word type="f">Buzeráns</Word>
@@ -47,6 +50,7 @@
   <Word type="f">Céda</Word>
   <Word type="m">Cérnafaszú</Word>
   <Word type="f">Cottonfej</Word>
+  <Word type="m">Csempe szobában felneveltetett</Word>
   <Word type="m">Cseszett</Word>
   <Word type="f">Csibefasz</Word>
   <Word type="f">Csipszar</Word>
@@ -55,6 +59,7 @@
   <Word type="f">Csöcs</Word>
   <Word type="f">Csöcsfej</Word>
   <Word type="f">Csöppszar</Word>
+  <Word type="m">Csőszkunyhóban elrejtett</Word>
   <Word type="m">Csupaszfarkú</Word>
   <Word type="f">Cuncipunci</Word>
   <Word type="m">Deformáltfaszú</Word>
@@ -69,6 +74,7 @@
   <Word type="m">Elbaszott</Word>
   <Word type="m">Eleve hülye</Word>
   <Word type="m">Extrahülye</Word>
+  <Word type="m">Fafogú rézfűrésszel megsebzett</Word>
   <Word type="m">Fantasztikusan segg</Word>
   <Word type="f">Fasszopó</Word>
   <Word type="m">Fasz</Word>
@@ -174,6 +180,7 @@
   <Word type="f">Kis szaros</Word>
   <Word type="f">Kisfütyi</Word>
   <Word type="m">Klotyószagú</Word>
+  <Word type="m">Ködmönbe bújtatott</Word>
   <Word type="m">Kojak-faszú</Word>
   <Word type="m">Kopárfaszú</Word>
   <Word type="m">Korlátolt gecizésű</Word>
@@ -223,12 +230,14 @@
   <Word type="m">Mesterséges faszú</Word>
   <Word type="f">Méteres kékeres</Word>
   <Word type="m">Mikrotökű</Word>
+  <Word type="m">Mocskos</Word>
   <Word type="f">Mojfing</Word>
   <Word type="m">Műfaszú</Word>
   <Word type="f">Muff</Word>
   <Word type="f">Multifasz</Word>
   <Word type="m">Műtöttpofájú</Word>
   <Word type="m">Náci</Word>
+  <Word type="m">Nagyfejű</Word>
   <Word type="f">Nikotinpatkány</Word>
   <Word type="m">Nimfomániás</Word>
   <Word type="f">Nuna</Word>
@@ -252,6 +261,7 @@
   <Word type="m">Picsánnyalt</Word>
   <Word type="m">Picsánrugott</Word>
   <Word type="m">Picsányi</Word>
+  <Word type="m">Pikkelypáncélt hordó</Word>
   <Word type="f">Pina</Word>
   <Word type="f">Pisa</Word>
   <Word type="m">Pisaszagú</Word>
@@ -272,12 +282,16 @@
   <Word type="f">Qki</Word>
   <Word type="f">Qrva</Word>
   <Word type="f">Qtyaszar</Word>
+  <Word type="m">Rabló</Word>
   <Word type="m">Rágcsáltfaszú</Word>
   <Word type="f">Redva</Word>
   <Word type="m">Rendkívül fasz</Word>
+  <Word type="m">Repedtsarkú</Word>
   <Word type="m">Rétó-román</Word>
+  <Word type="m">Rézhasú</Word>
   <Word type="f">Ribanc</Word>
   <Word type="f">Riherongy</Word>
+  <Word type="m">Ritka fogú</Word>
   <Word type="m">Rivalizáló</Word>
   <Word type="f">Rőfös fasz</Word>
   <Word type="m">Rojtospicsájú</Word>
@@ -292,6 +306,7 @@
   <Word type="f">Seggnyaló</Word>
   <Word type="f">Seggszőr</Word>
   <Word type="f">Seggtorlasz</Word>
+  <Word type="m">Sikoltozásokba öltöztetett</Word>
   <Word type="f">Strici</Word>
   <Word type="m">Suttyó</Word>
   <Word type="m">Sutyerák</Word>
@@ -324,6 +339,7 @@
   <Word type="f">Szopós kurva</Word>
   <Word type="m">Szopottfarkú</Word>
   <Word type="m">Szűklyukú</Word>
+  <Word type="m">Szultán udvarát megjárt</Word>
   <Word type="f">Szúnyogfaszni</Word>
   <Word type="f">Szuperbuzi</Word>
   <Word type="f">Szuperkurva</Word>
@@ -331,6 +347,7 @@
   <Word type="f">Szűzkurva</Word>
   <Word type="f">Szűzpicsa</Word>
   <Word type="f">Szűzpunci</Word>
+  <Word type="m">Tetves</Word>
   <Word type="f">Tikfos</Word>
   <Word type="f">Tikszar</Word>
   <Word type="m">Tompatökű</Word>
