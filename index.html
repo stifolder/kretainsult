@@ -6,23 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Kréta inzultus generator</title>
 	<link rel="stylesheet" href="style.css">
-	<script src="generate-script.js"></script>
-	<script type="text/javascript" src="https://github.com/niklasvh/html2canvas/releases/download/0.4.1/html2canvas.js"></script>
-	<script type="text/javascript">
-        function copy() {
-            var c = document.getElementsByClassName('box')[0];
-            html2canvas(c, {
-                onrendered: function (canvas) {
-                    theCanvas = canvas;
-                    var image = new Image();
-                    image.id = "pic"
-                    image.src = theCanvas.toDataURL();
-                    image.height = c.clientHeight
-                    image.width = c.clientWidth
-                    window.open(image.src, 'Chart')
-                }
-            })
-        }
+	<script src="generate-script.js"></script>	
+	<script src="copy-text.js"></script>	
     </script>
 </head>
 <body>
@@ -38,7 +23,7 @@
 	<div>
 		<div class="button-container">
 			<button id="generate" onclick="generate()">Kérek még!</button>
-			<button id="screenshot" onclick="copy()">Másold ki!</button>	
+			<button id="screenshot" onclick="copyText()">Másold ki!</button>	
 		</div>
 		<div class="clearfix"></div>
 	</div>
