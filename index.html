@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kréta inzultus generator</title>
-    <link rel="stylesheet" href="style.css">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Kréta inzultus generator</title>
+	<link rel="stylesheet" href="style.css">
 	<style type="text/css">
-		
 		#bg {
 			position: fixed;
 			top: 0;
@@ -15,16 +14,16 @@
 			left: 0;
 			right: 0;
 			z-index: -1000;
-			background: rgb(2,0,36);
-			background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,103,156,1) 0%, rgba(0,0,0,1) 100%);
+			background: rgb(2, 0, 36);
+			background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 103, 156, 1) 0%, rgba(0, 0, 0, 1) 100%);
 		}
-		
-		body{
-			
+
+		body {
+
 			color: white;
 			font-size: 24pt;
 		}
-		
+
 		.box {
 			background: white;
 			width: 640px;
@@ -32,22 +31,22 @@
 			margin: 20px auto;
 			box-shadow: 0px 7px 10px rgb(0 0 0 / 60%);
 		}
-		
+
 		.header {
 			padding: 10px;
 			background: #2fa8ca;
 		}
-		
+
 		.content {
 			padding: 10px;
 			color: #09679c;
 		}
-		
-		.clearfix{
+
+		.clearfix {
 			clear: both;
 		}
-		
-		.footer{
+
+		.footer {
 			position: fixed;
 			bottom: 1px;
 			left: 0;
@@ -58,10 +57,10 @@
 			background: white;
 			color: #2fa8ca;
 			text-align: center;
-			
+
 		}
-		
-		button{
+
+		button {
 			float: right;
 			padding: 10px;
 			background: #2fa8ca;
@@ -69,76 +68,75 @@
 			margin: 10px 0;
 			border: none;
 		}
-		
-		button:hover{
-			background: #09679c;		
+
+		button:hover {
+			background: #09679c;
 			cursor: pointer;
 		}
-	
-	
 	</style>
-	
+
 	<script type="text/javascript">
 		const adjectives = [];
 		const nouns = [];
-	
+
 		function getRandomInt(max) {
 			return Math.floor(Math.random() * max);
 		}
-	
-		function generate(){
-			let generated = "";	
-			let numOfAdjectives = getRandomInt(3) + 1;		
-			for(let i = 0; i < numOfAdjectives; i++){
+
+		function generate() {
+			let generated = "";
+			let numOfAdjectives = getRandomInt(3) + 1;
+			for (let i = 0; i < numOfAdjectives; i++) {
 				let adjective = adjectives[getRandomInt(adjectives.length)];
-				if(i > 0){
+				if (i > 0) {
 					adjective = adjective.toLowerCase();
 				}
 				generated += adjective + ", ";
 			}
 			generated = generated.substring(0, generated.length - 2) + " ";
-			generated += nouns[getRandomInt(nouns.length)].toLowerCase() + "!"		
+			generated += nouns[getRandomInt(nouns.length)].toLowerCase() + "!"
 			document.getElementById("generated").innerHTML = generated;
 		}
-	
+
 		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
+		xhttp.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
 				var xmlDoc = xhttp.responseXML;
 				words = xmlDoc.getElementsByTagName("Word");
-				for(let word of words) {
+				for (let word of words) {
 					let type = word.getAttribute("type");
-					
-					if(type == "m"){
+
+					if (type == "m") {
 						adjectives.push(word.innerHTML);
 					}
-					
-					if(type == "f"){
+
+					if (type == "f") {
 						nouns.push(word.innerHTML);
 					}
 				}
-				generate();				
-			}			   
+				generate();
+			}
 		}
+		
 		xhttp.open("GET", "piszkosszavak.xml", true);
 		xhttp.send();
 	</script>
-	
-  </head>
-  <body>
+</head>
+
+<body>
 	<div id="bg"></div>
 	<div class="box">
 		<div class="header">
 			Te...
 		</div>
 		<div class="content" id="generated"></div>
-		<div class="content"> 
-			<button id="generate" onclick="generate()">Kérek még!</button>	
+		<div class="content">
+			<button id="generate" onclick="generate()">Kérek még!</button>
 		</div>
 		<div class="clearfix"></div>
 	</div>
 	<div class="footer">
 		~ thx sawarim ~
 	</div>
-  </body>
+</body>
 </html>
