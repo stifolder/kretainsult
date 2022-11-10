@@ -18,5 +18,3 @@ jobs:
           source-directory: '.'
           destination-github-username: 'kretainsult'
           destination-repository-name: 'kretainsult.github.io'
-          user-email: ''
-          target-branch: main
