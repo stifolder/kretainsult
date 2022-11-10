@@ -51,8 +51,17 @@ body {
 
 }
 
-button {
+#generate {
     float: right;
+    padding: 10px;
+    background: #2fa8ca;
+    color: white;
+    margin: 10px 0;
+    border: none;
+}
+
+#screenshot {
+    float: left;
     padding: 10px;
     background: #2fa8ca;
     color: white;
