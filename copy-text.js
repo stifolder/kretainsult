@@ -10,7 +10,8 @@ function copy() {
       });
   }
 
-function screenshot() {
+
+  function screenshot() {
     var card = document.getElementById("card");
 
     html2canvas(document.getElementById("card")).then(function(canvas){

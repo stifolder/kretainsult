@@ -1,4 +1,10 @@
 {
+  "name": "kretainsult",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "an insulting website",
+  "author": "Niarit",
+  "license": "None",
   "dependencies": {
     "html2canvas": "^1.4.1"
   }
