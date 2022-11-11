@@ -1,0 +1,34 @@
+<div id="canvas-screen">
+  <div class="screenshot-box" #screen>
+    <div class="screenshot-content">{{currentPhraseClip}}</div>
+    <div class="screenshot-footer">
+      Kréta inzultus generator | https://kretainsult.online
+    </div>
+  </div>
+  <img #canvas>
+  <a #downloadLink></a>
+</div>
+
+<div id="bg"></div>
+
+<div class="box">
+  <div>
+    <div class="header">
+      Te...
+    </div>
+    <div class="content" id="generated">{{currentPhrase}}</div>
+  </div>
+  <div class="buttons">
+    <button [class.inverse]="clipSuccess" ngxClipboard [cbContent]="currentPhraseClip"
+            (cbOnSuccess)="clipboardSuccess()">{{clipSuccess ? 'Siker!' : 'Vágólapra'}}</button>
+    <button class="ml-1" (click)="saveImage()">Mentés képként</button>
+    <span class="spacer"></span>
+    <button class="right" (click)="generate()">Kérek még!</button>
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+<div class="footer">
+  ~ <a href="https://t.me/sawarim">thx sawarim</a> ~ <a href="https://twitter.com/inzultalas" target="_blank">follow on
+  twitter</a> ~
+</div>
