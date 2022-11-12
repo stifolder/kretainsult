@@ -19,11 +19,15 @@
     <div class="content" id="generated">{{currentPhrase}}</div>
   </div>
   <div class="buttons">
-    <button [class.inverse]="clipSuccess" ngxClipboard [cbContent]="currentPhraseClip"
-            (cbOnSuccess)="clipboardSuccess()">{{clipSuccess ? 'Siker!' : 'Vágólapra'}}</button>
-    <button class="ml-1" (click)="saveImage()">Mentés képként</button>
-    <span class="spacer"></span>
-    <button class="right" (click)="generate()">Kérek még!</button>
+    <div class="left-links">
+      <a href="#" ngxClipboard [cbContent]="currentPhraseClip"
+         (cbOnSuccess)="textClipboardSuccess()">{{textClipSuccess ? 'Siker!' : 'Szöveg vágólapra'}}</a>
+      <a href="#" (click)="copyImage()">{{imgClipSuccess ? 'Siker!' : 'Kép vágólapra'}}</a>
+      <a href="#" (click)="saveImage()">Kép mentése</a>
+    </div>
+    <div class="right-links">
+      <button (click)="generate()">Kérek még!</button>
+    </div>
     <div class="clearfix"></div>
   </div>
 </div>

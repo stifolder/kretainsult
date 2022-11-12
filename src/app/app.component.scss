@@ -1,3 +1,8 @@
+$bg-color: #385765;
+$blue-light: #2fa8ca;
+$blue-dark: #09679c;
+$gray: #797a82;
+
 #canvas-screen {
   position: fixed;
   top: 0;
@@ -15,7 +20,7 @@
   right: 0;
   z-index: -1;
   background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 103, 156, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  background: $bg-color;
 }
 
 #download {
@@ -25,18 +30,17 @@
 .screenshot-box {
   background: white;
   width: 640px;
-  max-width: 100%;
   margin: 20px auto;
-  box-shadow: 0px 7px 10px rgb(0 0 0 / 60%);
 
   .screenshot-content {
     padding: 10px;
-    color: #09679c;
+    color: $blue-dark;
+    background: white;
   }
 
   .screenshot-footer {
     padding: 10px;
-    background: #2fa8ca;
+    background: $blue-light;
     font-size: 10pt;
     text-align: right;
     letter-spacing: 2px
@@ -48,58 +52,59 @@
   width: 640px;
   max-width: 100%;
   margin: 20px auto;
-  box-shadow: 0px 7px 10px rgb(0 0 0 / 60%);
 
   .header {
     padding: 10px;
-    background: #2fa8ca;
+    background: $blue-light;
   }
 
   .content {
     padding: 10px;
-    color: #09679c;
+    color: $blue-dark;
+    min-height: 100px;
   }
 
   .buttons {
     padding: 10px;
+    display: flex;
 
-    .spacer {
+    .left-links {
       flex-grow: 1;
-    }
 
-    .ml-1 {
-      margin-left: 10px;
-    }
-
-    button {
-      padding: 10px;
-      background: #2fa8ca;
-      color: white;
-      border: none;
-      width: 120px;
-      margin-top: 10px;
-
-      float: left;
-
-      &.inverse {
-        color: #2fa8ca;
-        background: white;
+      a {
+        color: $gray;
+        text-decoration: none;
+        font-size: 12pt;
+        float: left;
+        clear: left;
+        margin-bottom: 10px;
 
         &:hover {
-          background: white !important;
-          cursor: auto;
+          text-decoration: underline;
         }
       }
+    }
 
-      &.right {
-        float: right;
+    .right-links {
+      display: flex;
+      flex-direction: column-reverse;
+
+      button {
+        padding: 10px;
+        background: $blue-light;
+        color: white;
+        border: none;
+        margin-top: 10px;
+        font-variant: all-small-caps;
+        font-size: 15pt;
+        padding: 10px;
+
+        &:hover {
+          background: $blue-dark;
+          cursor: pointer;
+        }
+
       }
-
-      &:hover {
-        background: #09679c;
-        cursor: pointer;
-      }
-
     }
   }
 }
@@ -114,13 +119,13 @@
   line-height: 30px;
   font-size: 12pt;
   background: white;
-  color: #2fa8ca;
+  color: $blue-light;
   text-align: center;
 
   a {
     font-size: 12pt;
     text-decoration: none;
-    color: #2fa8ca;
+    color: $blue-light;
   }
 }
 

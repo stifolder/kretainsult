@@ -16,7 +16,8 @@ export class AppComponent implements OnInit {
   adjectives: Array<string> = [];
   nouns: Array<string> = [];
   currentPhrase = "";
-  clipSuccess: boolean;
+  textClipSuccess: boolean;
+  imgClipSuccess: boolean;
 
   get currentPhraseClip() {
     return 'Te ' + this.currentPhrase?.toLowerCase();
@@ -74,8 +75,19 @@ export class AppComponent implements OnInit {
     });
   }
 
-  clipboardSuccess() {
-    this.clipSuccess = true;
-    setTimeout(() => this.clipSuccess = false, 1000);
+  copyImage() {
+    html2canvas(this.screen.nativeElement).then((canvas: any) => {
+      canvas.toBlob((blob: Blob) => {
+        let clipboardData = [new ClipboardItem({['image/png']: blob})]
+        navigator.clipboard.write(clipboardData);
+      }, 'image/png');
+      this.imgClipSuccess = true;
+      setTimeout(() => this.imgClipSuccess = false, 1000);
+    });
+  }
+
+  textClipboardSuccess() {
+    this.textClipSuccess = true;
+    setTimeout(() => this.textClipSuccess = false, 1000);
   }
 }
