@@ -1,5 +1,17 @@
+@import '~ngx-toastr/toastr';
+@import "theme";
+
 body {
   font-family: "Trebuchet MS";
-  color: white;
-  font-size: 24pt;
 }
+
+.text-center{
+  text-align:center;
+}
+
+.clearfix {
+  clear: both;
+}
+
+
+

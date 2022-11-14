@@ -1,7 +1,7 @@
 import {Component, OnInit, ElementRef, ViewChild} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {ScreenshotRendererComponent} from "./components/screenshot-renderer/screenshot-renderer.component";
+import {InsultService} from "./services/insult.service";
 
-declare let html2canvas: any;
 
 @Component({
   selector: 'app-root',
@@ -9,85 +9,30 @@ declare let html2canvas: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  @ViewChild('screen') screen: ElementRef;
-  @ViewChild('canvas') canvas: ElementRef;
-  @ViewChild('downloadLink') downloadLink: ElementRef;
 
-  adjectives: Array<string> = [];
-  nouns: Array<string> = [];
-  currentPhrase = "";
-  textClipSuccess: boolean;
-  imgClipSuccess: boolean;
+  @ViewChild('screenshotRenderer')
+  screenshotRenderer: ScreenshotRendererComponent;
 
-  get currentPhraseClip() {
-    return 'Te ' + this.currentPhrase?.toLowerCase();
-  }
-
-  constructor(private http: HttpClient) {
-  }
-
-  private getRandomInt(max: number) {
-    return Math.floor(Math.random() * max);
+  constructor(public insultService: InsultService) {
   }
 
   ngOnInit(): void {
-    this.http.get('assets/dirtywords.xml', {responseType: 'text'}).subscribe(data => {
-      const xmlDoc = (new DOMParser()).parseFromString(data, "text/xml");
-      let words = xmlDoc.getElementsByTagName("Word");
-      for (let i = 0; i < words.length; i++) {
-        let word = words[i] as Element;
-        let type = word.getAttribute("type");
-        if (type == "m") {
-          this.adjectives.push(word.innerHTML);
-        }
-        if (type == "f") {
-          this.nouns.push(word.innerHTML);
-        }
-      }
-      this.generate();
-    });
+    this.insultService.initialize();
   }
 
-  generate() {
-    let generated = "";
-    let numOfAdjectives = this.getRandomInt(3) + 1;
-    for (let i = 0; i < numOfAdjectives; i++) {
-      let randomAdjectiveIndex = this.getRandomInt(this.adjectives.length);
-      let adjective = this.adjectives[randomAdjectiveIndex] as string;
-      if (i > 0) {
-        adjective = adjective.toLowerCase();
-      }
-      generated += adjective + ", ";
-    }
-    generated = generated.substring(0, generated.length - 2) + " ";
 
-    let randomNounIndex = this.getRandomInt(this.nouns.length);
-    generated += (this.nouns[randomNounIndex] as string).toLowerCase() + "!"
-    this.currentPhrase = generated;
-  }
-
-  saveImage() {
-    html2canvas(this.screen.nativeElement).then((canvas: any) => {
-      this.canvas.nativeElement.src = canvas.toDataURL();
-      this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
-      this.downloadLink.nativeElement.download = 'inzultus.png';
-      this.downloadLink.nativeElement.click();
-    });
-  }
-
-  copyImage() {
-    html2canvas(this.screen.nativeElement).then((canvas: any) => {
-      canvas.toBlob((blob: Blob) => {
-        let clipboardData = [new ClipboardItem({['image/png']: blob})]
-        navigator.clipboard.write(clipboardData);
-      }, 'image/png');
-      this.imgClipSuccess = true;
-      setTimeout(() => this.imgClipSuccess = false, 1000);
-    });
-  }
-
-  textClipboardSuccess() {
-    this.textClipSuccess = true;
-    setTimeout(() => this.textClipSuccess = false, 1000);
-  }
+  // saveImage() {
+  //   this.screenshotRenderer.saveImage();
+  // }
+  //
+  // copyImage() {
+  //   this.screenshotRenderer.copyImage();
+  //   this.imgClipSuccess = true;
+  //   setTimeout(() => this.imgClipSuccess = false, 1000);
+  // }
+  //
+  // textClipboardSuccess() {
+  //   this.textClipSuccess = true;
+  //   setTimeout(() => this.textClipSuccess = false, 1000);
+  // }
 }

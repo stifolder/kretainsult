@@ -1,0 +1,24 @@
+@import "../../../theme/kretainsult-variables";
+
+.screenshot-box {
+
+  background: white;
+  width: 640px;
+  margin: 20px auto;
+
+  .screenshot-content {
+    font-size: 24pt;
+    padding: 10px;
+    color: $blue-dark;
+    background: white;
+  }
+
+  .screenshot-footer {
+    color: $white;
+    padding: 10px;
+    background: $blue-light;
+    font-size: 10pt;
+    text-align: right;
+    letter-spacing: 2px
+  }
+}

@@ -1,0 +1,20 @@
+@import "../../../theme/kretainsult-variables";
+
+.footer {
+  position: fixed;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12pt;
+  background: white;
+  color: $blue-light;
+  text-align: center;
+
+  a {
+    font-size: 12pt;
+    text-decoration: none;
+    color: $blue-light;
+  }
+}

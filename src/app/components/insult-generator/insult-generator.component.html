@@ -1,0 +1,24 @@
+<div class="box">
+  <div>
+    <div class="header">
+      Te...
+    </div>
+    <div class="content insult" id="generated">{{insultService.currentPhrase}}</div>
+  </div>
+  <div class="buttons">
+    <div class="left-links">
+      <button (click)="snapshotService.saveImage()">💾</button>
+      <button (click)="snapshotService.copyImage()">📋Kép</button>
+      <button ngxClipboard [cbContent]="insultService.currentPhraseClip"
+              (cbOnSuccess)="toastService.showGenericSuccess('Szöveg a vágólapon!')">📋Szöveg
+      </button>
+    </div>
+    <div class="right-links">
+      <button (click)="insultService.generate()">Kérek még!</button>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="under-box">
+  <a routerLink="miez">Mi ez?</a>
+</div>

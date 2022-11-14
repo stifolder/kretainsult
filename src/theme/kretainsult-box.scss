@@ -1,0 +1,91 @@
+@import "kretainsult-variables";
+
+.under-box {
+  margin-bottom: 50px;
+  text-align: center;
+
+  a {
+    color: $white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.box {
+  background: white;
+  width: 640px;
+  max-width: 100%;
+  margin: 20px auto;
+
+  a, a:visited {
+    color: $blue-light;
+  }
+
+  .header {
+    font-size: 24pt;
+    padding: 10px;
+    color: $white;
+    background: $blue-light;
+  }
+
+  .content {
+    padding: 10px;
+    color: $blue-dark;
+
+    ul.link-collection {
+      padding-inline-start: 5px;
+      list-style: none;
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      li:before {
+        content: "🔗";
+        padding-right: 5px;
+      }
+    }
+  }
+
+  .buttons {
+    padding: 10px;
+    display: flex;
+
+    button {
+      padding: 10px;
+      background: $blue-light;
+      color: $white;
+      border: none;
+      margin-top: 10px;
+      font-variant: all-small-caps;
+      font-size: 15pt;
+      padding: 10px;
+
+      &:hover {
+        background: $blue-dark;
+        cursor: pointer;
+      }
+    }
+
+    .left-links {
+      flex-grow: 1;
+      flex-direction: column-reverse;
+
+      button {
+        margin-right: 5px;
+      }
+    }
+
+    .right-links {
+      display: flex;
+      flex-direction: column-reverse;
+
+
+    }
+  }
+}

@@ -1,38 +1,6 @@
-<div id="canvas-screen">
-  <div class="screenshot-box" #screen>
-    <div class="screenshot-content">{{currentPhraseClip}}</div>
-    <div class="screenshot-footer">
-      Kréta inzultus generator | https://kretainsult.online
-    </div>
-  </div>
-  <img #canvas>
-  <a #downloadLink></a>
+<div id="screenshot-renderer-container" class="bg-container">
+  <app-screenshot-renderer></app-screenshot-renderer>
 </div>
-
-<div id="bg"></div>
-
-<div class="box">
-  <div>
-    <div class="header">
-      Te...
-    </div>
-    <div class="content" id="generated">{{currentPhrase}}</div>
-  </div>
-  <div class="buttons">
-    <div class="left-links">
-      <a href="#" ngxClipboard [cbContent]="currentPhraseClip"
-         (cbOnSuccess)="textClipboardSuccess()">{{textClipSuccess ? 'Siker!' : 'Szöveg vágólapra'}}</a>
-      <a href="#" (click)="copyImage()">{{imgClipSuccess ? 'Siker!' : 'Kép vágólapra'}}</a>
-      <a href="#" (click)="saveImage()">Kép mentése</a>
-    </div>
-    <div class="right-links">
-      <button (click)="generate()">Kérek még!</button>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-</div>
-
-<div class="footer">
-  ~ <a href="https://t.me/sawarim">thx sawarim</a> ~ <a href="https://twitter.com/inzultalas" target="_blank">follow on
-  twitter</a> ~
-</div>
+<div id="background-container" class="bg-container"></div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

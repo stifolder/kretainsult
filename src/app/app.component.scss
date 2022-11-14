@@ -1,137 +1,19 @@
-$bg-color: #385765;
-$blue-light: #2fa8ca;
-$blue-dark: #09679c;
-$gray: #797a82;
+@import "../theme/kretainsult-variables";
 
-#canvas-screen {
+.bg-container{
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+#screenshot-renderer-container {
   z-index: -2;
 }
 
-#bg {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+#background-container {
   z-index: -1;
   background: rgb(2, 0, 36);
   background: $bg-color;
 }
-
-#download {
-  display: none;
-}
-
-.screenshot-box {
-  background: white;
-  width: 640px;
-  margin: 20px auto;
-
-  .screenshot-content {
-    padding: 10px;
-    color: $blue-dark;
-    background: white;
-  }
-
-  .screenshot-footer {
-    padding: 10px;
-    background: $blue-light;
-    font-size: 10pt;
-    text-align: right;
-    letter-spacing: 2px
-  }
-}
-
-.box {
-  background: white;
-  width: 640px;
-  max-width: 100%;
-  margin: 20px auto;
-
-  .header {
-    padding: 10px;
-    background: $blue-light;
-  }
-
-  .content {
-    padding: 10px;
-    color: $blue-dark;
-    min-height: 100px;
-  }
-
-  .buttons {
-    padding: 10px;
-    display: flex;
-
-    .left-links {
-      flex-grow: 1;
-
-      a {
-        color: $gray;
-        text-decoration: none;
-        font-size: 12pt;
-        float: left;
-        clear: left;
-        margin-bottom: 10px;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    .right-links {
-      display: flex;
-      flex-direction: column-reverse;
-
-      button {
-        padding: 10px;
-        background: $blue-light;
-        color: white;
-        border: none;
-        margin-top: 10px;
-        font-variant: all-small-caps;
-        font-size: 15pt;
-        padding: 10px;
-
-        &:hover {
-          background: $blue-dark;
-          cursor: pointer;
-        }
-
-      }
-    }
-  }
-}
-
-
-.footer {
-  position: fixed;
-  bottom: 1px;
-  left: 0;
-  right: 0;
-  height: 30px;
-  line-height: 30px;
-  font-size: 12pt;
-  background: white;
-  color: $blue-light;
-  text-align: center;
-
-  a {
-    font-size: 12pt;
-    text-decoration: none;
-    color: $blue-light;
-  }
-}
-
-
-.clearfix {
-  clear: both;
-}
-
-
